@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button id="test">test</button>
+</body>
+<script src="static/jquery/jquery-3.1.0.js"></script>
+<script src="static/common.js"></script>
+<script type="text/javascript">
+	$(function () {
+		$('#test').click(function () {
+			asyncCallAjaxByPost('/send/test', { }, function (res) {
+				console.log(res);
+				alert(res.data);
+			});
+		});
+	})
+</script>
+</html>
